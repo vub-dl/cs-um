@@ -15,9 +15,7 @@ Drift is controlled by the top level class `Simulation(C, D, base_functions, dri
 
 Drift for the `Sine_Base` is illustrated below.
 
-![sine_drift]("https://github.com/vub-dl/cs-um/tree/master/animations/sine_drift.gif")
-
-
+![Alt Text](https://media.giphy.com/media/37QNktv30GTzdGnPgA/giphy.gif)
 
 ### Effect
 When every a cause `C` is chosen, one can call `.chose_cause(C)` and an effect is returned. When a response is required that does not include drift or noise the method can be called as `.chose_cause(C, drift=False, n=False)`.
