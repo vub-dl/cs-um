@@ -29,4 +29,4 @@ class Polynomial_Base:
 		for i in range(self.q + 1):
 			for j in range(self.D):
 				val[i] *=  x[j] ** self.U[i][j]
-		return self.logistic(np.dot(np.full(self.q + 1, self.h(d)) + self.K, val))
+		return self.logistic(np.dot(np.sum([np.full(self.q + 1, self.h(d)), self.K], axis=0), val))
