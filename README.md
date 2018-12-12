@@ -13,6 +13,12 @@ Here, `K` (the coefficient vector) implies a crucial difference with the `Sine_B
 ### Drift
 Drift is controlled by the top level class `Simulation(C, D, base_functions, drift_rate, drift_over_time, sudden_drift, drift_moments, std)` through its parameters `drift_rate`, `drift_over_time`, `sudden_drift` and `drift_moments` where the first three are necessary when random drift is required. These first three parameters can be omitted when the `drift_moments` are chosen before the simulation is running. These moments are moments in function of a `t` representing an experiment number. When the drift moments are to be chosen randomly by the `Simulation`, `drift_rate` describes the _amount_ that is drifted, `drift_over_time` governs how often or how gradual the drift is taking place and `sudden_drift` is `False` when the `drift_rate` is linearly distributed over `drift_over_time` and `True` when (on average) the complete `drift_rate` happens once in `drift_over_time`.
 
+Drift for the `Sine_Base` is illustrated below.
+
+![sine_drift]("https://github.com/vub-dl/cs-um/tree/master/animations/sine_drift.gif")
+
+
+
 ### Effect
 When every a cause `C` is chosen, one can call `.chose_cause(C)` and an effect is returned. When a response is required that does not include drift or noise the method can be called as `.chose_cause(C, drift=False, n=False)`.
 
