@@ -30,7 +30,7 @@ class Simulation:
 		self.current_drift = 0
 		self.drift = 0
 	
-	def pull_cause(self, C, drift=True, n=True):
+	def chose_cause(self, C, drift=True, n=True):
 		x = self.current_state
 
 		self.time += 1
