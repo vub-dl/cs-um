@@ -38,10 +38,16 @@ class Simulation:
 		self.update_drift()
 		
 		p = self.get_response_rate(C, x, drift)
-		if n and self.std:						
-			p = (1 + np.exp(-3 * np.random.normal(p, self.std))) ** -1
+		if n:						
+			p = self.apply_noise(p)
 
 		return self.get_new_state(), np.random.binomial(1, p)
+	
+	def apply_noise(self, p):
+		if self.std:
+			return (1 + np.exp(-3 * np.random.normal(p, self.std))) ** -1
+		return p
+
 
 	def get_response_rate(self, C, x, drift=True):
 		d = 0
