@@ -13,6 +13,7 @@ class Simulation:
 		self.drift_over_time = drift_over_time
 		self.drift_moments = drift_moments
 		self.sudden_drift = sudden_drift
+		self.current_drift = 0
 		self.drift = 0
 
 		self.std = std
@@ -30,12 +31,11 @@ class Simulation:
 		self.current_drift = 0
 		self.drift = 0
 	
-	def chose_cause(self, C, drift=True, n=True):
+	def choose_cause(self, C, drift=True, n=True):
 		x = self.current_state
 
 		self.time += 1
 		self.update_drift()
-		
 		
 		p = self.get_response_rate(C, x, drift)
 		if n and self.std:						
@@ -46,7 +46,8 @@ class Simulation:
 	def get_response_rate(self, C, x, drift=True):
 		d = 0
 		if drift:
-			d = self.drift
+			if self.drift:
+				d = self.drift
 		return self.base_functions[C].eval(x, d, C)
 
 	def update_drift(self):
@@ -58,8 +59,9 @@ class Simulation:
 				drift = self.drift_rate
 		else:
 			drift = self.drift_rate / self.drift_over_time
+
 		self.drift += drift
 		self.current_drift = drift
 	
 	def get_sim_uplift(self, x):
-		return self.get_response_rate(1, x, drift=False) - self.get_response_rate(0, x, drift=False)
+		return self.get_response_rate(1, x, drift=True) - self.get_response_rate(0, x, drift=True)
