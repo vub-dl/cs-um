@@ -19,7 +19,7 @@ class Polynomial_Base:
 		return out
 	
 	def h(self, d):
-		return math.sin(d)
+		return math.sin(d) * 3
 	
 	def logistic(self, x):
 		return (1 + np.exp(-x)) ** -1
