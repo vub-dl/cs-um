@@ -17,4 +17,4 @@ class Sine_Base: #single cause limit
 		for i in range(self.D):
 			interaction *= (x[i]+ abs(C - 1) * self.G[i])
 
-		return (math.sin((self.f + C) * interaction + d) + 1) / 2
+		return (math.sin((self.f) * interaction + d) + 1) / 2
