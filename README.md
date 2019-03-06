@@ -1,5 +1,5 @@
 # Causal Simulations for Uplift Modeling
-This is an accompanying repository for a paper, submitted to the AAAI Spring Symposium on [_Beyond Curve Fitting: Causation, Counterfactuals, and Imagination-based AI_](https://why19.causalai.net). In it you will find code and documentation, representing the ideas discussed in the paper, as well as extra (animated) visualisations. 
+This is an accompanying repository for a [paper](https://arxiv.org/abs/1902.00287), in it you will find code and documentation, representing the ideas discussed in the paper, as well as extra (animated) visualisations. 
 
 The paper focusses on a number of requirements that must be defined for any causal simulation. These requirements will form a guideline throughout the documentation of this code.
 
