@@ -1,6 +1,6 @@
 import numpy as np
-from Sine_Base import Sine_Base
-from Polynomial_Base import Polynomial_Base
+from .Sine_Base import Sine_Base
+from .Polynomial_Base import Polynomial_Base
 
 class Simulation:
 	def __init__(self, C=np.array([0, 1]), D=2, base_functions=np.array([Sine_Base(), Sine_Base()]), drift_rate=0, drift_over_time=1000, sudden_drift=False, drift_moments=np.array([]), std=0):
